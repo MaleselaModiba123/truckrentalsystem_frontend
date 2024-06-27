@@ -8,19 +8,23 @@ function App() {
 
 
   return (
-    <>
-  <BrowserRouter>
-  <HeaderComponent/>
-  <Routes>
-<Route>
-
-</Route>
-  </Routes>
-  
-  <FooterComponent/>
-  </BrowserRouter>
-    </>
-  )
+    <div className="app-container">
+      <BrowserRouter>
+        <HeaderComponent />
+        <div className="content-container">
+          <Routes>
+            <Route path="/" element={<CustomerProfile />} />
+            <Route
+              path="/update-customer/:customerID"
+              element={<CustomerComponent />}
+            />
+            
+          </Routes>
+        </div>
+        <FooterComponent />
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App
